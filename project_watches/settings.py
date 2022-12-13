@@ -1,17 +1,16 @@
 import os.path
 from pathlib import Path
 
+from django.conf.urls import handler404
 from django.urls import reverse_lazy
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-t2c%wftgr$5s@#*8voi!v6isgg%)cj41$^ka95%28==(-j87e#'
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
-# Application definition
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',

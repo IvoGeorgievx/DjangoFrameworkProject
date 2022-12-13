@@ -7,6 +7,10 @@ from project_watches.web.forms import EditWatchForm, EditWalletForm, EditSunglas
 from project_watches.web.models import Watches, Wallets, Sunglasses, Belts, Ties
 
 
+def custom_404_error(request, exception):
+    return render(request, 'errors/404.html')
+
+
 def index(request):
     return render(request, 'base.html')
 
