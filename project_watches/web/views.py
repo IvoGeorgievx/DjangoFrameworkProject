@@ -11,6 +11,10 @@ def custom_404_error(request, exception):
     return render(request, 'errors/404.html')
 
 
+def custom_500_error(request):
+    return render(request, 'errors/500.html')
+
+
 def index(request):
     return render(request, 'base.html')
 
