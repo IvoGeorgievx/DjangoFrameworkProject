@@ -1,0 +1,44 @@
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+body {
+    margin: 0;
+    font-family: "Helvetica", sans-serif;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+
+nav ul {
+    text-align: center;
+}
+
+nav {
+    background: #cb7535;
+    padding: 15px;
+    width: auto;
+    /*margin-right: 100px;*/
+    /*border-radius: 14px;*/
+
+}
+
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    background: #cb7535;
+    text-align: center;
+}
+
+
+
+
+

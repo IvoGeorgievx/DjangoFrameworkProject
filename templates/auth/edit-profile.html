@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <body background="">
+    <img src="{% static 'images/hand_watch.jpg' %}" class="w3-opacity-max" height="835" width="1920">
+    <div class="w3-display-middle w3-padding">
+
+        <form enctype="multipart/form-data" method="post" action="{% url 'edit profile' pk=profile.pk %}">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <button class="w3-button w3-black w3-round-large"><a href="{% url 'edit profile' pk=profile.pk %}"></a>Edit</button>
+
+        </form>
+    </div>
+    </body>
+
+
+
+{% endblock %}

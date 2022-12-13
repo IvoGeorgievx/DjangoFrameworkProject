@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <body background="">
+    <img src="{% static 'images/wallet-bg.jpg' %}" class="w3-opacity-max" height="835" width="1920">
+    <div class="w3-container w3-center">
+        <div class="w3-display-middle">
+            <ul>
+                {% for object in object_list %}
+                    <img src="{{ object.image.url }}" width="250" height="250" alt="{{ object.name }} img">
+                    <li><strong>Brand: {{ object.name }}</strong></li>
+                    <li><strong>Wallet Size: {{ object.size }}</strong></li>
+                    {% if user.is_authenticated %}
+                        <button><a href="{% url 'wallet details' pk=object.pk %}">More Details</a></button>
+                    {% endif %}
+                    {% if request.user.is_staff %}
+                        <button><a href="{% url 'edit wallet' pk=object.pk %}">Edit</a></button>
+                        {% csrf_token %}
+                    {% endif %}
+
+                {% endfor %}
+            </ul>
+            <div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}

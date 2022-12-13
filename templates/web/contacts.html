@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <body background= {% static 'images/wallpaperflare.com_wallpaper.jpg' %}>
+    <div class="w3-display-left w3-padding">
+        <div class="w3-container">
+            <div class="w3-container w3-hover-text-white">
+                <h2>If you have any questions, feel free to ask us anything!</h2>
+                <p>Just fill up this form on the right and we will get back to you in a short notice!</p>
+            </div>
+        </div>
+    </div>
+    <div class="w3-display-right w3-padding">
+        <div class="w3-container w3-hover-text-white">
+            <div class="w3-container">
+                <form class="w3-container" method="post" action="{% url 'contacts view' %}">
+                    {{ form.as_p }}
+{#                    <p>#}
+{#                        <label>Email</label>#}
+{#                        <input class="w3-input" type="text" placeholder="Enter your email here">#}
+{#                    <p>#}
+{#                    <p>#}
+{#                        <label>First name</label>#}
+{#                        <input class="w3-input" type="text">#}
+{#                    <p>#}
+{#                    <p>#}
+{#                        <label>Subject</label>#}
+{#                        <input class="w3-input" type="text">#}
+{#                    <p>#}
+{#                    <p>#}
+{#                        <label>Description</label>#}
+{#                        <input class="w3-input" type="text">#}
+{#                    <p>#}
+
+
+                        <button>Send</button>
+                        {% csrf_token %}
+                </form>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <body background="">
+    <img src="{% static 'images/wallet-bg.jpg' %}" class="w3-opacity-max" height="835" width="1920">
+    <div class="w3-display-middle w3-padding">
+        <form enctype="multipart/form-data" class="w3-container" method="post" action="{% url 'edit wallet' pk=object.pk %}">
+            {{ form.as_p }}
+            <button>Edit</button>
+            {% csrf_token %}
+        </form>
+    </div>
+    </body>
+{% endblock %}

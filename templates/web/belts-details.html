@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="w3-container">
+
+        <ul class="w3-ul w3-center">
+            <li><img src="{{ object.image.url }}" width="300" height="300" alt="watch img"></li>
+            <li>Brand: {{ object.brand }}</li>
+            <li>Material: {{ object.material }}</li>
+            <li>Color: {{ object.color }}</li>
+            <li>Buckle Form: {{ object.buckle_form }}</li>
+            <li>Price: {{ object.price }}$</li>
+        </ul>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <body background= {% static 'images/wallpaperflare.com_wallpaper.jpg' %}>
+    <div class="w3-display-middle w3-padding">
+        <div class="w3-container w3-hover-text-white">
+            <form method="post" action="{% url 'edit profile' pk=profile.pk %}">
+                <h1>{{ object.username }}</h1>
+                {% if profile.image %}
+                    <img src="{{ profile.image }}" width="250" height="250" class="w3-round" alt="profile img">
+                {% endif %}
+                {% if profile.user == request.user %}
+                    {% if profile.first_name is not None %}
+                        <p>First name: {{ profile.first_name }}</p>
+                    {% endif %}
+                    {% if profile.last_name is not None %}
+                        <p>Last name: {{ profile.last_name }}</p>
+                    {% endif %}
+                    {% if profile.email is not None %}
+                        <p>Email: {{ profile.email }}</p>
+                    {% endif %}
+                    {% if profile.gender is not None %}
+                        <p>Gender: {{ profile.gender }}</p>
+                    {% endif %}
+                    {% if profile.age is not None %}
+                        <p>Age: {{ profile.age }}</p>
+                    {% endif %}
+                    <a href="{% url 'edit profile' pk=profile.pk %}">Edit Profile</a>
+                    <a href="{% url 'delete profile' pk=profile.pk %}">Delete Profile</a>
+
+                    {% csrf_token %}
+                {% endif %}
+            </form>
+
+        </div>
+    </div>
+
+
+    </div>
+    </body>
+
+{% endblock %}
+

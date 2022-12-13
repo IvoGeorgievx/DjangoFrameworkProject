@@ -1,0 +1,17 @@
+<ul>
+    {% if user.is_superuser %}
+
+        {% for user in user_list %}
+            <li>
+                {% if user == request.user %}
+                    <strong>{{ user.username }}</strong>
+
+                {% else %}
+                    {{ user.username }}-{{ user.is_staff }}
+                {% endif %}
+            </li>
+
+
+        {% endfor %}
+    {% endif %}
+</ul>

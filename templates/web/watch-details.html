@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+    <div class="w3-container">
+
+
+        <ul class="w3-ul w3-center">
+
+            <li><img src="{{ object.image.url }}" class="w3-round" width="300" height="300" alt="watch img"></li>
+            <li>Watch name: {{ object.name }}</li>
+            <li>Model year: {{ object.year }}</li>
+            <li>Full description: {{ object.description }}</li>
+            <li>Price: {{ object.price }}$</li>
+
+        </ul>
+    </div>
+
+{% endblock %}
+
+
+
