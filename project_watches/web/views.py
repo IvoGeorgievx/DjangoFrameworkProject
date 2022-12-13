@@ -2,7 +2,6 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.urls import reverse_lazy
 from django.views import generic as views
 from django.shortcuts import render
-
 from project_watches.auth_app.forms import ContactForm
 from project_watches.web.forms import EditWatchForm, EditWalletForm, EditSunglassesForm, EditBeltsForm, EditTiesForm
 from project_watches.web.models import Watches, Wallets, Sunglasses, Belts, Ties
