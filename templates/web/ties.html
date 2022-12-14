@@ -11,11 +11,11 @@
                     <li><strong>Color: {{ object.color }}</strong></li>
                     <li><strong>Material: {{ object.material }}</strong></li>
                     {% if user.is_authenticated %}
-                        <button><a href="{% url 'ties details' pk=object.pk %}">More Details</a></button>
+                        <button class="w3-button w3-black w3-round-large"><a href="{% url 'ties details' pk=object.pk %}">More Details</a></button>
                     {% else %}
                     {% endif %}
                     {% if request.user.is_staff %}
-                        <button><a href="{% url 'edit ties' pk=object.pk %}">Edit</a></button>
+                        <button class="w3-button w3-black w3-round-large"><a href="{% url 'edit ties' pk=object.pk %}">Edit</a></button>
                         {% csrf_token %}
                     {% endif %}
                 {% endfor %}

@@ -11,11 +11,11 @@
                     <li><strong>Brand: {{ object.name }}</strong></li>
                     <li><strong>Frame Size: {{ object.lens_size }}</strong></li>
                     {% if user.is_authenticated %}
-                        <button><a href="{% url 'sunglasses details' pk=object.pk %}">More Details</a></button>
+                        <button class="w3-button w3-black w3-round-large"><a href="{% url 'sunglasses details' pk=object.pk %}">More Details</a></button>
                     {% else %}
                     {% endif %}
                     {% if request.user.is_staff %}
-                        <button><a href="{% url 'edit sunglasses' pk=object.pk %}">Edit</a></button>
+                        <button class="w3-button w3-black w3-round-large"><a href="{% url 'edit sunglasses' pk=object.pk %}">Edit</a></button>
                         {% csrf_token %}
                     {% endif %}
                 {% endfor %}

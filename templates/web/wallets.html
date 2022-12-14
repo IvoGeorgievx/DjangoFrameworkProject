@@ -12,10 +12,10 @@
                     <li><strong>Brand: {{ object.name }}</strong></li>
                     <li><strong>Wallet Size: {{ object.size }}</strong></li>
                     {% if user.is_authenticated %}
-                        <button><a href="{% url 'wallet details' pk=object.pk %}">More Details</a></button>
+                        <button class="w3-button w3-black w3-round-large"><a href="{% url 'wallet details' pk=object.pk %}">More Details</a></button>
                     {% endif %}
                     {% if request.user.is_staff %}
-                        <button><a href="{% url 'edit wallet' pk=object.pk %}">Edit</a></button>
+                        <button class="w3-button w3-black w3-round-large"><a href="{% url 'edit wallet' pk=object.pk %}">Edit</a></button>
                         {% csrf_token %}
                     {% endif %}
 

@@ -2,14 +2,18 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.contrib.auth.models import User
 from django.contrib.auth import views as auth_views, get_user_model
 from django.http import HttpResponseRedirect
+from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic as views
 from django.contrib.auth import forms as auth_forms, authenticate, login
-
 from project_watches.auth_app.forms import SignUpForm, EditProfileForm, DeleteProfileForm, ContactForm
 from project_watches.auth_app.models import Profile
 
 UserModel = get_user_model()
+
+
+def custom_404_error(request, exception):
+    return render(request, 'errors/404.html')
 
 
 class SignUpView(views.CreateView):

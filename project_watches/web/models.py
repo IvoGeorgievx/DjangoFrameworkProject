@@ -20,13 +20,16 @@ MAX_LENGTH_CHOICES = 10
 
 
 class Watches(models.Model):
+    class Meta:
+        verbose_name_plural = 'Watches'
+
     name = models.CharField(max_length=MAX_LENGTH_NAME)
 
     year = models.PositiveIntegerField(null=False, blank=False, validators=[model_years_validator])
 
     description = models.TextField(null=False, blank=False)
 
-    image = models.ImageField(null=True, blank=True, )
+    image = models.ImageField(null=True, blank=True, upload_to='static/images/')
 
     price = models.PositiveIntegerField(null=False, blank=False)
 
@@ -35,6 +38,9 @@ class Watches(models.Model):
 
 
 class Sunglasses(models.Model):
+    class Meta:
+        verbose_name_plural = 'Sunglasses'
+
     choices = (
         ('small', 'Small'),
         ('medium', 'Medium'),
@@ -59,6 +65,9 @@ class Sunglasses(models.Model):
 
 
 class Wallets(models.Model):
+    class Meta:
+        verbose_name_plural = 'Wallets'
+
     choices = (
         ('Yes', 'Yes'),
         ('No', 'No'),
@@ -82,6 +91,9 @@ class Wallets(models.Model):
 
 
 class Belts(models.Model):
+    class Meta:
+        verbose_name_plural = 'Belts'
+
     choices = (
         ('Leather', 'Leather'),
         ('Plastic', 'Plastic'),
@@ -105,6 +117,9 @@ class Belts(models.Model):
 
 
 class Ties(models.Model):
+    class Meta:
+        verbose_name_plural = 'Ties'
+
     choices = (
         ('Polyester', 'Polyester'),
         ('Wool', 'Wool'),
@@ -122,7 +137,3 @@ class Ties(models.Model):
 
     def __str__(self):
         return f'{self.brand}'
-
-
-
-
