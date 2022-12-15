@@ -1,8 +1,6 @@
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.test import TestCase
-from django.urls import reverse, reverse_lazy
-
 from project_watches.auth_app.forms import EditProfileForm, SignUpForm, DeleteProfileForm
 from project_watches.auth_app.models import Profile
 
@@ -40,6 +38,12 @@ class ProfileModelTests(TestCase):
 
         self.assertIsNotNone(context.exception)
 
+    def test_user_logged__when_registered__expect_logged_in(self):
+        user = User.objects.create(username='Something', password='Asdasd123')
+
+        self.assertTrue(user.is_authenticated)
+        self.assertFalse(user.is_anonymous)
+
 
 class AuthFormsTests(TestCase):
     def test_edit_profile__when_form_is_valid__expect_edited(self):
@@ -69,4 +73,3 @@ class AuthFormsTests(TestCase):
         form = EditProfileForm(data)
 
         self.assertFalse(form.is_valid())
-

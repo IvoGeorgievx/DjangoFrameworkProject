@@ -12,10 +12,6 @@ from project_watches.auth_app.models import Profile
 UserModel = get_user_model()
 
 
-def custom_404_error(request, exception):
-    return render(request, 'errors/404.html')
-
-
 class ContactsView(views.CreateView):
     template_name = 'web/contacts.html'
     form_class = ContactForm

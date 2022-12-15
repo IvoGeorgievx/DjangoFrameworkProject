@@ -13,4 +13,5 @@ urlpatterns = [
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-handler404 = 'project_watches.auth_app.views.custom_404_error'
+handler404 = 'project_watches.auth_app.custom_errors.custom_404_error'
+handler403 = 'project_watches.auth_app.custom_errors.custom_403_error'
