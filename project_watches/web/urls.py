@@ -1,11 +1,10 @@
 from django.urls import path
 from project_watches.web.views import index, WatchesView, WatchDetailsView, WalletsView, \
     WalletDetailsView, SunglassesView, SunglassesDetailsView, EditWatchView, EditWalletView, EditSunglassesView, \
-    BeltsView, BeltsDetailsView, EditBeltsView, TiesView, TiesDetailsView, EditTiesView, ContactsView, about_view
+    BeltsView, BeltsDetailsView, EditBeltsView, TiesView, TiesDetailsView, EditTiesView, about_view
 
 urlpatterns = (
     path('', index, name='index'),
-    path('contacts/', ContactsView.as_view(), name='contacts view'),
     path('about/', about_view, name='about view'),
     path('gallery/watches/', WatchesView.as_view(), name='watches view'),
     path('gallery/watches/<int:pk>/', WatchDetailsView.as_view(), name='watch details'),

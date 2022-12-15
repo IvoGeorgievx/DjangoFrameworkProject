@@ -16,6 +16,12 @@ def custom_404_error(request, exception):
     return render(request, 'errors/404.html')
 
 
+class ContactsView(views.CreateView):
+    template_name = 'web/contacts.html'
+    form_class = ContactForm
+    success_url = reverse_lazy('index')
+
+
 class SignUpView(views.CreateView):
     template_name = 'auth/sign-up.html'
     form_class = SignUpForm
