@@ -1,7 +1,6 @@
-from django.core.exceptions import ValidationError
 from django.db import models
 from project_watches.auth_app.models import Profile
-from project_watches.web.validators import model_years_validator
+from project_watches.web.validators import model_years_validator, belt_price_validator
 
 MAX_LENGTH_NAME = 25
 MAX_LENGTH_COLOR = 15

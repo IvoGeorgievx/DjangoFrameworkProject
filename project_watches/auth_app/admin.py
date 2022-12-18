@@ -1,5 +1,4 @@
 from django.contrib import admin
-
 from project_watches.auth_app.models import Profile, Contact
 
 
