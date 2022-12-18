@@ -1,6 +1,9 @@
 from django import forms
+from django.contrib.auth.forms import UsernameField
 from django.contrib.auth.models import User
 from django.contrib.auth import forms as auth_forms
+from django.db import models
+
 from project_watches.auth_app.models import Profile, Contact
 
 

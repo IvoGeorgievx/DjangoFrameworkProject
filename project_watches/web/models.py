@@ -1,6 +1,17 @@
+from django.core.exceptions import ValidationError
 from django.db import models
 from project_watches.auth_app.models import Profile
-from project_watches.web.validators import model_years_validator, belt_price_validator
+
+
+def model_years_validator(value):
+    if 1990 > value or value > 2022:
+        raise ValidationError('Model must be between years 1990 and 2022(inclusive).')
+
+
+def belt_price_validator(value):
+    if value > 150:
+        raise ValidationError('Belt price can not be higher than 150$.')
+
 
 MAX_LENGTH_NAME = 25
 MAX_LENGTH_COLOR = 15

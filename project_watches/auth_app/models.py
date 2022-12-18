@@ -1,7 +1,13 @@
 from django.contrib.auth.models import User
 from django.core import validators
+from django.core.exceptions import ValidationError
 from django.db import models
-from project_watches.auth_app.validators import validate_name
+
+
+def validate_name(value):
+    for i in value:
+        if not i.isalpha():
+            raise ValidationError('Name must contain only alphabet characters!')
 
 
 class Profile(models.Model):
@@ -15,7 +21,7 @@ class Profile(models.Model):
 
     last_name = models.CharField(null=True, blank=True, max_length=MAX_LENGTH_NAME, validators=[validate_name])
 
-    email = models.EmailField(null=True, blank=True, unique=True)
+    email = models.EmailField(null=True, blank=True, unique=True, )
 
     image = models.URLField(null=True, blank=True)
 
