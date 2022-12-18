@@ -19,7 +19,7 @@
             <ul>
                 {% for object in object_list %}
                     {% if object.image %}
-                        <img src="{{ object.image.url }}" width="165" height="195" alt="{{ object.name }} img">
+                        <img src="{{ object.image.url }}" width="185" height="195" alt="{{ object.name }} img">
                     {% endif %}
                     <li><strong>Brand: {{ object.name }}</strong></li>
                     <li><strong>Model year: {{ object.year }}</strong></li>
@@ -30,7 +30,7 @@
                     {% endif %}
                     {% if request.user.is_staff %}
                         <a href="{% url 'edit watch' pk=object.pk %}">
-                            <button class="w3-button w3-black w3-round-large">Edit Watch</button>
+                            <button class="w3-button w3-black w3-round-large">Edit</button>
                         </a>
                         {% csrf_token %}
                     {% endif %}

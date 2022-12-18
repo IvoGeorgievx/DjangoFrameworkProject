@@ -90,8 +90,3 @@ class WebFormsTests(TestCase):
 
         self.assertFalse(form.is_valid())
 
-
-class WebViewsTests(TestCase):
-
-    def test_user_details__when_owner__expect_is_owner_true(self):
-        pass

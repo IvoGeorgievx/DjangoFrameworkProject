@@ -1,13 +1,7 @@
 from django.contrib.auth.models import User
 from django.core import validators
-from django.core.exceptions import ValidationError
 from django.db import models
-
-
-def validate_name(value):
-    for i in value:
-        if not i.isalpha():
-            raise ValidationError('Name must contain only alphabet characters!')
+from project_watches.auth_app.validators import validate_name
 
 
 class Profile(models.Model):
